@@ -10,6 +10,7 @@ Class RockPaperScissorgame
 
     play
   end
+
 def humanPlay()
     answer = nil
     loop do
