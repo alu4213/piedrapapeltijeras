@@ -1,4 +1,4 @@
-Class RockPaperScissorgame
+ass RockPaperScissorsGame
   def initialize()
     @pieces = %w[rock paper scissors]
     @beats = {
@@ -6,12 +6,17 @@ Class RockPaperScissorgame
       'paper' => 'scissors',
       'scissors' => 'rock',
     }
+    @plays = {
+      'rock' => 1,
+      'paper' => 1,
+      'scissors' => 1,
+    }
     @score = [0, 0]
-
+ 
     play
   end
-
-def humanPlay()
+ 
+  def humanPlay()
     answer = nil
     loop do
       print "\nYour choice: #@pieces? "
@@ -26,8 +31,8 @@ def humanPlay()
     end
     answer
   end
-
-def computerPlay()
+ 
+  def computerPlay()
     total = @plays.values.reduce(:+)
     r = rand(total) + 1
     sum = 0
@@ -41,7 +46,8 @@ def computerPlay()
     end
     @beats[humans_choice]
   end
-def play
+ 
+  def play
     loop do
       h = humanPlay
       c = computerPlay
@@ -65,4 +71,3 @@ def play
 end
  
 game = RockPaperScissorsGame.new
-
