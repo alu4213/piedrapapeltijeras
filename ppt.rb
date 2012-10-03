@@ -25,3 +25,18 @@ def humanPlay()
     end
     answer
   end
+
+def computerPlay()
+    total = @plays.values.reduce(:+)
+    r = rand(total) + 1
+    sum = 0
+    humans_choice = nil
+    @pieces.each do |piece|
+      sum += @plays[piece]
+      if r <= sum
+        humans_choice = piece
+        break
+      end
+    end
+    @beats[humans_choice]
+  end
